@@ -1,0 +1,149 @@
+{
+  "name": "Liao Junxin",
+  "gender": "Male",
+  "birthday": "1987-05-07",
+  "email": "liaoAssin1987@gmail.com",
+  "address": "Setagaya-ku, Tokyo, Japan",
+  "skills": {
+    "languages": ["Java", "Kotlin", "Dart", "Python"],
+    "tools": ["Android Studio", "Eclipse", "WebStorm", "PyCharm", "VS Code"],
+    "web": ["HTML", "CSS", "JavaScript", "\nWeChat Mini Program"],
+    "domains": ["Android Apps", "Web & Lightweight Backend", "IoT Applications"]
+  },
+  "languages": {
+    "Chinese": "Native",
+    "English": "CELPIP Level 5",
+    "Japanese": "Currently studying in Tokyo Sanritsu Academy"
+  },
+  "advantages": {
+    "experience": "10+ years of Android development experience, covering multiple industries including e-commerce, energy monitoring, IoT, and education.",
+    "develop": "Having experience in independently developing Android applications, I can use Flutter to develop applications.",
+    "research": "I'm self-taught in Python and HTML and am currently researching and implementing AI-based office automation.",
+    "partner": "I have a partner company in China that researches and develops hardware, and I am interested in energy and hydroponics."
+  },
+  "education": [
+    {
+      "period": "2006.09 - 2009.07",
+      "school": "Jianghan Institute for Vocational Education",
+      "major": "Computer Science (Associate Degree)"
+    },
+    {
+      "period": "2006.09 - 2009.07",
+      "school": "Tianjin University",
+      "major": "Computer Science (Bachelor Correspondence)"
+    }
+  ],
+  "work": [
+    {
+      "company": "Xiamen BanniXing Technology",
+      "period": "2013.03 - 2016.03",
+      "role": "Android Engineer",
+      "desc": "Developed multiple consumer apps including feature expansion, updates, bug fixes, and project support."
+    },
+    {
+      "company": "Zhonghe ShiChuang Electric Power Tech",
+      "period": "2016.03 - 2024.03",
+      "role": "Software Engineer & PM",
+      "desc": "Led development of inspection system, dispatching apps, student management platform, secure calling system, etc."
+    },
+    {
+      "company": "Changting Gemute Technology",
+      "period": "2024.04 - 2025.09",
+      "role": "Engineer",
+      "desc": "Smart TV setup & networking system development, video control software participation."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Laoban Lai Wo Zhe",
+      "summary": "Merchant-side Android app for managing store and product information with discount and review features.",
+      "duty": "Developed the entire Android app, handled feedback and bug fixes.",
+      "result": "Improved merchant experience by about 30% and ensured stable operation.",
+      "tech": ["Android", "Java"]
+    },
+    {
+      "name": "Lai Wo Zhe",
+      "summary": "User-side shopping app featuring product search, reviews, travel bookings and tour reservations.",
+      "duty": "Full Android development, issue handling, feature planning, data monitoring.",
+      "result": "Improved performance by 35% and reduced code redundancy by 20%.",
+      "tech": ["Android", "Java", "xUtils"]
+    },
+    {
+      "name": "Gou Feng",
+      "summary": "Countdown-style shopping app with limited-time and special-price offers.",
+      "duty": "Co-developed product list, result page, logistics tracking.",
+      "result": "Optimized multi-item countdown via Handler/Task, kept bug rate under 20%.",
+      "tech": ["Android", "Java"]
+    },
+    {
+      "name": "Gou Chao",
+      "summary": "Fashion coordination app showing influencer outfits with comments and sharing.",
+      "duty": "Implemented product list, detail view, and homepage.",
+      "result": "Kept overall bug rate under 20% through structured code management.",
+      "tech": ["Android", "Java"]
+    },
+    {
+      "name": "Power Equipment Inspection App",
+      "summary": "App to locate power equipment on map and support on-site inspection via navigation.",
+      "duty": "Implemented layered map display, walk/drive navigation, coordinated with utility companies.",
+      "result": "Boosted rendering efficiency by 20% using Baidu/AMap SDK and OpenGL.",
+      "tech": ["Android", "Java", "OpenGL", "Baidu SDK", "AMap SDK"]
+    },
+    {
+      "name": "Vehicle Dispatch System",
+      "summary": "Internal workflow app for vehicle application, dispatch, navigation and progress tracking.",
+      "duty": "PM + main developer: requirements, design, development, release.",
+      "result": "Delivered complete system in two weeks.",
+      "tech": ["Android", "Kotlin", "REST API"]
+    },
+    {
+      "name": "Android Walkie-Talkie",
+      "summary": "Voice communication app with group and individual call functions.",
+      "duty": "Developed full Android version including login, group switching and settings.",
+      "result": "Improved transmission speed by 35% using Speex compression.",
+      "tech": ["Android", "Java", "Speex"]
+    },
+    {
+      "name": "Emergency Alert System",
+      "summary": "Enterprise emergency alert app with one-touch alarm and SMS automation.",
+      "duty": "Android development and integration with device-level components.",
+      "result": "Delivered in one week with stable performance.",
+      "tech": ["Android", "Java"]
+    },
+    {
+      "name": "LingJu SNS",
+      "summary": "SNS app with voice chat and family-group features.",
+      "duty": "Implemented voice chat and family modules; migrated all Java code to Kotlin.",
+      "result": "Synchronized behavior between Android and iOS via NetEase Audio SDK.",
+      "tech": ["Android", "Kotlin", "NetEase SDK"]
+    },
+    {
+      "name": "Hazardous Goods Transport App",
+      "summary": "Platform for cargo owners and drivers with navigation and transport record tracking.",
+      "duty": "Migrated Java→Kotlin, researched Flutter porting, added new modules.",
+      "result": "Improved performance by 30% after Kotlin migration.",
+      "tech": ["Android", "Kotlin", "Flutter"]
+    },
+    {
+      "name": "School Management Platform",
+      "summary": "Integrated system for grades, attendance and daily records (Android / iOS / Web).",
+      "duty": "PM role: requirements, design, development management, testing, delivery.",
+      "result": "Delivered on schedule and provided full operation manuals.",
+      "tech": ["Android", "Kotlin", "Web", "Backend"]
+    },
+    {
+      "name": "Network Repair Platform",
+      "summary": "System for clients to submit repair requests via app or Web.",
+      "duty": "Developed Flutter app, Web interface and Python backend end-to-end.",
+      "result": "Delivered stable cross-platform app and backend.",
+      "tech": ["Flutter", "Python", "Web"]
+    },
+    {
+      "name": "Video Control System",
+      "summary": "Remote video control system built with Flutter and Python.",
+      "duty": "Developed app and backend API for control signal communication.",
+      "result": "Improved API stability and response time.",
+      "tech": ["Flutter", "Python"]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+# -------------------------
+# Python Cache
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# -------------------------
+# Virtual Environments
+# -------------------------
+env/
+venv/
+ENV/
+VENV/
+.virtualenv/
+
+# -------------------------
+# Package & Build Artifacts
+# -------------------------
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+develop-eggs/
+pip-wheel-metadata/
+*.whl
+
+# -------------------------
+# Logs & Temp
+# -------------------------
+*.log
+*.tmp
+*.temp
+
+# -------------------------
+# Tools Cache
+# -------------------------
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# -------------------------
+# Environment files
+# -------------------------
+.env
+.env.*
+*.secret
+*.token
+
+# -------------------------
+# IDE / Editor settings
+# -------------------------
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb~
+
+# -------------------------
+# Large model files (可按需继续添加)
+# -------------------------
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# -------------------------
+# System
+# -------------------------
+.DS_Store
+Thumbs.db
