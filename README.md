@@ -1,47 +1,45 @@
-<details open>
-<summary>English</summary>
+<details open> <summary>English</summary>
 
 Project Overview
-
-This project implements a complete authentication workflow, including user registration, password recovery, login, and communication with a locally hosted AI model.
-The mobile application is developed using Flutter, and the backend server is implemented with Python (FastAPI + SQLite). Both run within the same local network.
+This project implements a complete authentication workflow, including user registration, password recovery, login, and interaction with a locally hosted AI model.
+The mobile application is built with Flutter, and the backend server is implemented using Python (FastAPI + SQLite). Both components operate within the same local network.
 
 System Architecture
 
 Frontend (Flutter)
-Provides UI, manages state, handles form validation, and communicates with the backend via REST API.
+Handles UI rendering, state management, form validation, and communication with the backend via REST APIs.
 
 Backend (FastAPI)
-Provides authentication endpoints, AES-CBC encrypted login data handling, user management, and a local AI-model inference interface.
+Provides authentication endpoints, processes AES-CBC encrypted login payloads, manages user data, and exposes an inference interface for locally loaded AI models.
 
 Database (SQLite)
-Stores user credentials (salted & hashed passwords) and user profile information.
+Stores user credentials (salted and hashed passwords) and profile information.
 
 Local AI Integration
-The server supports loading quantized LLM models and provides a simple streaming response API for the app.
+The backend supports loading quantized LLM models and offers a simple streaming-response API for real-time interaction.
 
 Technology Decisions
 
 FastAPI instead of Django
-Chosen for its lightweight design, faster startup, and simpler integration with asynchronous model inference.
+Selected for its lightweight structure, faster startup times, and easier integration with asynchronous model inference.
 
 AES-CBC + PKCS#7
-Used for secure handling of login payloads.
+Used to securely transmit encrypted login information.
 
 SQLite
-Adequate for a local environment, zero-configuration, and portable.
+Chosen for its portability and suitability for a self-contained local development environment.
 
 AI Assistance Usage
+Generative AI (ChatGPT) was used in accordance with the assignment guidelines.
+AI contributed to:
 
-Generative AI was used under the allowed rules of the assignment.
-AI assisted with:
+Comparing Django and FastAPI for backend design
 
-Framework comparison between Django and FastAPI
+Identifying unnecessary widget rebuilds in the Flutter UI
 
-Identifying redundant widget rebuilds in Flutter
+Reviewing AES encryption/decryption logic and resolving response-format issues
 
-Reviewing encryption/decryption logic and debugging response format issues
-All implemented logic was validated and finalized manually.
+All final implementations were reviewed and completed manually.
 
 Environment Requirements
 
@@ -49,26 +47,25 @@ Flutter SDK ≥ 3.22.3
 
 Android Studio 2022.3.1 or later
 
-Python 3.10+
+Python 3.11+
 
 Required Python packages listed in requirements.txt
 
 Project Setup
 
-Configure the server’s host IP address in config.dart.
+Set the server host IP in config.dart.
 
 Start the backend:
 
 python main.py
 
 
-Build and install the Flutter app on an emulator or device.
+Build and install the Flutter app on an emulator or physical device.
 
-Ensure both are on the same LAN.
+Ensure both the backend and the device are connected to the same local network.
 
 Local AI Model Support
-
-Supports loading models up to 4B parameters (Int4) depending on GPU memory.
-The performance depends on hardware constraints.
+The backend supports loading quantized models up to approximately 4B parameters (Int4), depending on available GPU memory.
+Actual performance varies by hardware capability.
 
 </details>
