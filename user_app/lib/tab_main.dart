@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'config.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -8,6 +12,43 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+  String _username = "Liao Junxin";
+  String _email = "liaoAssin1987@gmail.com";
+
+  @override
+  void initState() {
+    super.initState();
+    loadUser();
+  }
+
+  void loadUser() async {
+    var user = await fetchUser();
+    if (user != null && mounted) {
+      setState(() {
+        _username = user["username"];
+        _email = user["email"];
+      });
+    }
+  }
+
+  Future<Map<String, dynamic>?> fetchUser() async {
+    final url = Uri.parse("${AppConfig.instance.baseUrl}/get_user");
+    final res = await http.post(
+      url,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ${AppConfig.instance.token}",
+      },
+    );
+    final data = jsonDecode(res.body);
+    if (data["code"] == 200) {
+      return data["data"];
+    } else {
+      return null;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,18 +84,18 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                   const SizedBox(height: 14),
-                  const Text(
-                    "Liao Junxin",
-                    style: TextStyle(
+                  Text(
+                    _username,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
                     ),
                   ),
                   const SizedBox(height: 4),
-                  const Text(
-                    "Engineer",
-                    style: TextStyle(
+                  Text(
+                    _email,
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black54,
                     ),

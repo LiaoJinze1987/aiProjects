@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'config.dart';
 
 class AiPage extends StatefulWidget {
   const AiPage({super.key});
@@ -21,7 +22,7 @@ class _AiPageState extends State<AiPage> {
   final List<ChatMessage> _messages = [];
   bool _isSending = false;
 
-  final String apiUrl = "http://192.168.3.6:8000/ai_chat";
+  final String apiUrl = "${AppConfig.instance.baseUrl}/ai_chat";
 
   Future<void> sendMessage() async {
     final msg = _controller.text.trim();

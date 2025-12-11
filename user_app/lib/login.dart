@@ -5,6 +5,7 @@ import 'util.dart';
 import 'register.dart';
 import 'forget.dart';
 import 'home.dart';
+import 'config.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
     String encryptedPwd = AESUtil.encrypt(password);
     //var url = Uri.parse("http://10.0.2.2:8000/register");
     // set the inner IP of server's pc
-    var url = Uri.parse("http://192.168.3.6:8000/login");
+    var url = Uri.parse("${AppConfig.instance.baseUrl}/login");
     var res = await http.post(
       url,
       headers: {"Content-Type": "application/json"},
@@ -74,6 +75,10 @@ class _LoginPageState extends State<LoginPage> {
     int code = data["code"];
     String message = data["message"];
     if (code == 200) {
+      final dat = data["data"];
+      AppConfig.instance.token = dat["token"];
+      AppConfig.instance.userId = dat["user_id"].toString();
+      AppConfig.instance.userName = username;
       showMessage("Login Success!");
       Navigator.pushReplacement(
           context,

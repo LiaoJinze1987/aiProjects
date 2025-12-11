@@ -5,13 +5,14 @@ from tkinter.scrolledtext import ScrolledText
 from tkinter import filedialog
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Header
 from pydantic import BaseModel
 from Crypto.Cipher import AES
 import base64
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-
+import jwt
+import time
 import database
 from aimodel import ai_init, ai_unload, ai_chat
 
@@ -51,15 +52,14 @@ sys.stdout = TkLogStream()
 sys.stderr = TkLogStream()
 
 
-# =============================================================================
-# FastAPI 服务器（原 server.py 内容）
-# =============================================================================
-
 database.init_db()
 app = FastAPI()
 
 AES_KEY = b"1234567890abcdef"
 AES_IV = b"abcdef1234567890"
+
+JWT_SECRET = "lins8767as3455n7M8"
+JWT_EXPIRE = 24 * 3600  # token 24 小时过期
 
 executor = ThreadPoolExecutor(max_workers=1)
 
@@ -71,6 +71,22 @@ def aes_decrypt(cipher_text: str) -> str:
     pad_len = decrypted[-1]
     return decrypted[:-pad_len].decode("utf-8")
 
+def create_token(user_id: int):
+    now = int(time.time())
+    payload = {
+        "user_id": user_id,
+        "exp": now + JWT_EXPIRE,
+        "iat": now
+    }
+    return jwt.encode(payload, JWT_SECRET, algorithm="HS256")
+
+
+def verify_token(token: str):
+    try:
+        data = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
+        return data["user_id"]
+    except Exception:
+        return None
 
 def response(code: int, message: str, data=None):
     res = {"code": code, "message": message}
@@ -114,8 +130,34 @@ def login(req: RequestModel):
     if user.password != pwd:
         return response(203, "Invalid password")
 
+    token = create_token(user.id)
     print(f"User login: {req.username}")
-    return response(200, "Login success", {"user_id": user.id})
+
+    return response(200, "Login success", {
+        "token": token,
+        "user_id": user.id
+    })
+
+@app.post("/get_user")
+def get_user(authorization: str = Header(default="")):
+    # Flutter 侧用:   Authorization: Bearer <token>
+    if not authorization.startswith("Bearer "):
+        return response(401, "Missing or invalid token")
+
+    token = authorization.split(" ")[1]
+    user_id = verify_token(token)
+    if not user_id:
+        return response(403, "Token expired or invalid")
+
+    user = database.get_user_by_id(user_id)
+    if not user:
+        return response(404, "User not found")
+
+    return response(200, "Success", {
+        "id": user.id,
+        "username": user.username,
+        "email": user.email
+    })
 
 
 @app.post("/reset_password")

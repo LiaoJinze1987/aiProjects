@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'util.dart';
+import 'config.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -36,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
     String encryptedPwd = AESUtil.encrypt(pwd);
     //var url = Uri.parse("http://10.0.2.2:8000/register");
     // set the inner IP of server's pc
-    var url = Uri.parse("http://192.168.3.6:8000/register");
+    var url = Uri.parse("${AppConfig.instance.baseUrl}/register");
     var res = await http.post(
       url,
       headers: {"Content-Type": "application/json"},
