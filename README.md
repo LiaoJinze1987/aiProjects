@@ -1,6 +1,10 @@
 <details open>
 <summary>English</summary>
 
+**Simple design description**  
+
+This project uses Flutter to develop the app and Python to develop the server. Both operate on the same internal network for registration, password recovery, login, and loading and interacting with local AI models.
+
 **Development tools**  
 
 android studio Giraffe | 2022.3.1 Patch 1  
@@ -43,6 +47,10 @@ Based on practical testing:
 
 <details>
 <summary>日本語</summary>
+
+**Simple design description**  
+
+このプロジェクトでは、アプリの開発にFlutter、サーバーの開発にPythonを使用しています。どちらも同じ内部ネットワーク上で動作し、登録、パスワード回復、ログイン、ローカルAIモデルの読み込みと操作を行います。
 
 **Development tools**  
 
