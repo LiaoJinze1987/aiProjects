@@ -75,8 +75,8 @@ flutter sdk version: 3.22.3
 
 **How to load**  
 
-Use Android Studio Giraffe | 2022.3.1 Patch 1 or above to load the code in the user_app directory.  
-Use PyCharm Community Edition 2025.2.1.1 or above to load the ai_server directory.  
+Android Studio Giraffe | 2022.3.1 Patch 1 以上を使用して、user_app ディレクトリにコードをロードします。  
+ai_server ディレクトリをロードするには、PyCharm Community Edition 2025.2.1.1 以上を使用します。  
 Flutter SDK ≥ 3.22.3.  
 
 **How to run**  
