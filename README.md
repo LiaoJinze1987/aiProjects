@@ -1,3 +1,6 @@
+<details open>
+<summary>English</summary>
+
 Project Overview
 
 This project implements a complete authentication workflow, including user registration, password recovery, login, and communication with a locally hosted AI model.
@@ -67,3 +70,5 @@ Local AI Model Support
 
 Supports loading models up to 4B parameters (Int4) depending on GPU memory.
 The performance depends on hardware constraints.
+
+</details>
