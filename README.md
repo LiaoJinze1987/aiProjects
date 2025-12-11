@@ -1,6 +1,6 @@
 <details>
 
-<summary>English</summary>
+<summary>English</summary>  
 **Development tools**  
 android studio Giraffe | 2022.3.1 Patch 1  
 PyCharm Community Edition 2025.2.1.1  
