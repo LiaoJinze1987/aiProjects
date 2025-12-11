@@ -1,3 +1,16 @@
+<details>
+<summary>English</summary>
+
+This is the English version.
+
+</details>
+
+<details>
+<summary>日本語</summary>
+
+これは日本語バージョンの説明です。
+
+</details>
 **Development tools**  
 android studio Giraffe | 2022.3.1 Patch 1  
 PyCharm Community Edition 2025.2.1.1  
